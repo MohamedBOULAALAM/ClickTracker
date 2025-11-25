@@ -15,14 +15,7 @@ Le flux de données traverse trois composants découplés au sein de l'applicati
 2.  **Processor (Stream)** : Topologie Kafka Streams effectuant une agrégation (`count`) par utilisateur en temps réel.
 3.  **Consumer (Analytics)** : API REST exposant les résultats agrégés depuis une KTable/StateStore.
 
-```mermaid
-graph LR
-    A[Utilisateur (Web UI)] -->|Click Event| B(Topic: clicks)
-    B --> C{Kafka Streams}
-    C -->|Aggregation| D(Topic: click-counts)
-    D --> E[Consumer Service]
-    E -->|REST API| F[Dashboard JSON]
-```
+4. ![architucture](screens/img.png)
 
 ## 📂 Structure du Code
 Le projet respecte une architecture claire et modulaire :
